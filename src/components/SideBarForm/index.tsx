@@ -9,10 +9,6 @@ function SideBarForm({
   todos,
   setTodos,
 }: any) {
-  const addTodo = () => {
-    setOpenSideBar(false);
-  };
-
   const titleOnChangeHandler = (
     e: React.ChangeEvent<HTMLInputElement>
   ): void => {
@@ -24,6 +20,29 @@ function SideBarForm({
   ): void => {
     setDescription(e.target.value);
   };
+
+  const addTodo = (e: any) => {
+    e.preventDefault();
+    if (description && title) {
+      setTodos([
+        ...todos,
+        {
+          title: title,
+          description: description,
+          done: false,
+          id: Math.random() * 100000,
+          date: new Date().toLocaleDateString(),
+        },
+      ]);
+    } else {
+      alert("please, fill in the input");
+    }
+    setDescription("");
+    setTitle("");
+    setOpenSideBar(false);
+  };
+
+  console.log(todos);
 
   return (
     <div>
