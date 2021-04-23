@@ -42,8 +42,6 @@ function SideBarForm({
     setOpenSideBar(false);
   };
 
-  console.log(todos);
-
   return (
     <div>
       <form>

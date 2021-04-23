@@ -46,7 +46,7 @@ function Home() {
         />
       </div>
       <div>
-        <Todo />
+        <Todo setTodos={setTodos} todos={todos} />
       </div>
     </div>
   );
