@@ -1,11 +1,20 @@
-import React from 'react'
+import React from "react";
+function SideBarForm({ hideSideBar, setOpenSideBar }:any) {
 
-function SideBarForm() {
-    return (
-        <div>
-            SideBarForm
-        </div>
-    )
+  function addTodo() {
+    setOpenSideBar(false);
+  }
+
+  return (
+    <div>
+      <form>
+        <button id="cancelButton" onClick={hideSideBar}>hide</button>
+        <input type="text" required placeholder="Todo Title" />
+        <textarea placeholder="Todo Desciption" />
+        <button type="submit" onClick={addTodo}>Add Todo</button>
+      </form>
+    </div>
+  );
 }
 
-export default SideBarForm
+export default SideBarForm;
