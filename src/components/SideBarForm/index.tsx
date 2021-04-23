@@ -1,6 +1,5 @@
 import React from "react";
-function SideBarForm({ hideSideBar, setOpenSideBar }:any) {
-
+function SideBarForm({ hideSideBar, setOpenSideBar }: any) {
   function addTodo() {
     setOpenSideBar(false);
   }
@@ -8,10 +7,14 @@ function SideBarForm({ hideSideBar, setOpenSideBar }:any) {
   return (
     <div>
       <form>
-        <button id="cancelButton" onClick={hideSideBar}>hide</button>
+        <button id="cancelButton" onClick={hideSideBar}>
+          <i className="fas fa-times-circle"></i>
+        </button>
         <input type="text" required placeholder="Todo Title" />
         <textarea placeholder="Todo Desciption" />
-        <button type="submit" onClick={addTodo}>Add Todo</button>
+        <button type="submit" onClick={addTodo}>
+          Add Todo
+        </button>
       </form>
     </div>
   );

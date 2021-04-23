@@ -1,60 +1,59 @@
-.header-menu {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 10px 20px 0;
-  padding: 10px 15px;
-} 
-
-#addTodo {
-  position: absolute;
-  top: 0;
-  right: -400px;
-  margin: 0;
-  padding: 0;
-  width: 90%;
-  max-width: 300px;
-  height: 98vh;
-  border: 1px solid #ccc;
-  box-shadow: 0 0 20px 2px rgba(20, 20, 20, 0.5);
-  border-radius: 20px 0 0 20px;
+.header {
   background: #fff;
-  transition: right 250ms ease-out;
-}
-#addTodo.enabled {
-  right: 0;
-}
+  &__menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px 20px 0;
+    padding: 10px 15px;
+  }
 
-#addTodo form {
-  position: relative;
-  margin: 15px;
-  padding: 30px 10px 5px;
-}
+  &__addTodo {
+    position: absolute;
+    top: 0;
+    right: -400px;
+    margin: 0;
+    padding: 0;
+    width: 90%;
+    max-width: 300px;
+    height: 98vh;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 20px 2px rgba(20, 20, 20, 0.5);
+    border-radius: 20px 0 0 20px;
+    background: #fff;
+    transition: right 250ms ease-out;
+  }
+  &__enabled {
+    right: 0;
+  }
 
-#addTodo form input,
-#addTodo form textarea,
-#addTodo form button {
-  display: block;
-  margin: 10px auto;
-  width: 100%;
-}
+  &__addTodo form {
+    position: relative;
+    margin: 15px;
+    padding: 30px 10px 5px;
+  }
 
-#addTodo form button#cancelButton {
-  color: rgb(200, 35, 51);
-  display: inline-block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 0;
-  width: 40px;
-  height: 40px;
-  border: none;
-  background: red;
-}
-#addTodo form button#cancelButton:hover {
-  color: rgb(220, 53, 69);
-}
+  &__addTodo form input,
+  &__addTodo form textarea,
+  &__addTodo form button {
+    display: block;
+    margin: 10px auto;
+    width: 100%;
+  }
 
-#addTodo form textarea {
-  padding: 5px 7px;
+  &__addTodo form button#cancelButton {
+    color: rgb(200, 35, 51);
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: rgb(252, 244, 244);
+  }
+  &__addTodo form button#cancelButton:hover {
+    color: rgb(220, 53, 69);
+  }
 }
