@@ -4,6 +4,10 @@ import "./todoList.scss";
 function TodoList({ todos, setTodos, todo }: any) {
   const { title, description, done, date, id } = todo;
 
+  const deleteHandler = () => {
+    setTodos(todos.filter((item: any) => item.id !== id));
+  };
+
   return (
     <div>
       {todo && (
@@ -13,6 +17,9 @@ function TodoList({ todos, setTodos, todo }: any) {
           <div>{date}</div>
         </div>
       )}
+      <button onClick={deleteHandler}>
+        <i className="fas fa-trash"></i>
+      </button>
     </div>
   );
 }
