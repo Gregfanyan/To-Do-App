@@ -62,10 +62,15 @@ function SideBarForm({
           onChange={titleOnChangeHandler}
         />
         <textarea
+          required
           placeholder="Todo Desciption"
           onChange={descriptionOnChangeHandler}
         />
-        <button type="submit" onClick={addTodo} className='todo-form-wrapper__addTodo'>
+        <button
+          type="submit"
+          onClick={addTodo}
+          className="todo-form-wrapper__addTodo"
+        >
           Add Todo
         </button>
       </form>

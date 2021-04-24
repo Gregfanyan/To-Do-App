@@ -60,13 +60,19 @@ function Home() {
     <div className="header">
       <div className="header__menu">
         <h1>To Do List</h1>
-        <button onClick={openToSideBar} type="button">
-          <i className="fa fa-plus"></i>
-          Add new To Do
+        <div className="header__select-wrapper">
+          {todos.length > 0 && <Select statusHandler={statusHandler} />}
+        </div>
+        <button
+          onClick={openToSideBar}
+          type="button"
+          className="header__showSidebar"
+        >
+          <i className="fa fa-plus fa-2x"></i>
+          Add New To Do
         </button>
       </div>
 
-      {todos.length > 0 && <Select statusHandler={statusHandler} />}
       <div className={buttonClasses}>
         <SIdeBarForm
           hideSideBar={hideSideBar}
