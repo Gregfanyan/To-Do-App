@@ -1,10 +1,11 @@
 .todo-wrapper {
   display: flex;
   flex-direction: column;
+  padding-bottom: 5px;
 
   &__todo-title-date {
     position: relative;
-    padding: 10px 15px;
+    padding: 5px 10px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -42,7 +43,7 @@
   &__deleteBtn {
     margin: 5px;
     width: 100px;
-    height: 40px;
+    height: 34px;
     padding: 5px;
     border-radius: 10px;
     display: flex;
@@ -61,6 +62,5 @@
   }
   &__completed {
     text-decoration: line-through;
-    align-self: center;
   }
 }

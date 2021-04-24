@@ -27,6 +27,16 @@ function TodoList({ todos, setTodos, todo }: TodoListProps) {
     "todo-wrapper__completedBtnMarked": done,
   });
 
+  const todoCompletedTitle = classNames({
+    "todo-wrapper__title": true,
+    "todo-wrapper__completed": done,
+  });
+
+  const todoCompletedDesc = classNames({
+    "todo-wrapper__description": true,
+    "todo-wrapper__completed": done,
+  });
+
   return (
     <div>
       {todo && (
@@ -35,21 +45,11 @@ function TodoList({ todos, setTodos, todo }: TodoListProps) {
             <button onClick={completeHandler} className={buttonClasses}>
               <i className="fas fa-check"></i>
             </button>
-            <div
-              className={
-                done === false
-                  ? "todo-wrapper__title"
-                  : "todo-wrapper__completed"
-              }
-            >
-              {title}
-            </div>
+            <div className={todoCompletedTitle}>{title}</div>
             <div>Created at: {date}</div>
           </div>
           <div className="todo-wrapper__description-wrapper">
-            <div className={done === false ? "todo-wrapper__description" : "todo-wrapper__completed"}>
-              {description}
-            </div>
+            <div className={todoCompletedDesc}>{description}</div>
             <button onClick={deleteHandler} className="todo-wrapper__deleteBtn">
               <i className="far fa-trash-alt fa-lg"></i>
               Remove

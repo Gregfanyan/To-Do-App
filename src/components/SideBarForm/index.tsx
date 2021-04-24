@@ -39,7 +39,7 @@ function SideBarForm({
         },
       ]);
     } else {
-      alert("please, fill in the input");
+      alert("Please fill out all required fields");
     }
     setDescription("");
     setTitle("");
@@ -60,11 +60,13 @@ function SideBarForm({
           required
           placeholder="Todo Title"
           onChange={titleOnChangeHandler}
+          value={title}
         />
         <textarea
           required
           placeholder="Todo Desciption"
           onChange={descriptionOnChangeHandler}
+          value={description}
         />
         <button
           type="submit"
