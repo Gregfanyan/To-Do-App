@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import classNames from "classnames";
 import SIdeBarForm from "../components/SideBarForm";
 import Todo from "../components/Todo";
@@ -9,6 +9,8 @@ function Home() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [todos, setTodos] = useState([]);
+  const [status, setStatus] = useState("all");
+  const [filteredTodo, setFilteredTodo] = useState([]);
 
   const openToSideBar = () => {
     setOpenSideBar(true);
@@ -24,6 +26,23 @@ function Home() {
     header__enabled: openSideBar,
   });
 
+  useEffect(() => {
+    switch (status) {
+      case "done":
+        setFilteredTodo(todos.filter((todo) => todo.done === true));
+        break;
+      case "inProgress":
+        setFilteredTodo(todos.filter((todo) => todo.done === false));
+        break;
+      default:
+        setFilteredTodo(todos);
+    }
+  }, [todos, status]);
+
+  const statusHandler = (e: any) => {
+    setStatus(e.target.value);
+  };
+
   return (
     <div className="header">
       <div className="header__menu">
@@ -33,6 +52,14 @@ function Home() {
           Add new To Do
         </button>
       </div>
+
+      {todos && (
+        <select onChange={statusHandler} name="todos">
+          <option value="all">All</option>
+          <option value="done">Done</option>
+          <option value="inProgress">In progress</option>
+        </select>
+      )}
       <div className={buttonClasses}>
         <SIdeBarForm
           hideSideBar={hideSideBar}
@@ -46,7 +73,7 @@ function Home() {
         />
       </div>
       <div>
-        <Todo setTodos={setTodos} todos={todos} />
+        <Todo setTodos={setTodos} todos={filteredTodo} />
       </div>
     </div>
   );
