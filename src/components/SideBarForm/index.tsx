@@ -1,4 +1,7 @@
 import React from "react";
+
+import { SideBarFormProps } from "../../types/ui";
+
 function SideBarForm({
   hideSideBar,
   setOpenSideBar,
@@ -8,7 +11,7 @@ function SideBarForm({
   setDescription,
   todos,
   setTodos,
-}: any) {
+}: SideBarFormProps) {
   const titleOnChangeHandler = (
     e: React.ChangeEvent<HTMLInputElement>
   ): void => {
@@ -21,7 +24,7 @@ function SideBarForm({
     setDescription(e.target.value);
   };
 
-  const addTodo = (e: any) => {
+  const addTodo = (e: React.MouseEvent) => {
     e.preventDefault();
     if (description && title) {
       setTodos([

@@ -1,10 +1,12 @@
 import React from "react";
+
 import TodoList from "../TodoList";
-function Todo({ todos, setTodos }: any) {
+import { TodoProps } from "../../types/ui";
+function Todo({ todos, setTodos }: TodoProps) {
   return (
     <div>
       {todos &&
-        todos.map((todo: any) => (
+        todos.map((todo) => (
           <TodoList
             key={todo.id}
             todo={todo}

@@ -1,16 +1,18 @@
 import React from "react";
+
+import { TodoListProps } from "../../types/ui";
 import "./todoList.scss";
 
-function TodoList({ todos, setTodos, todo }: any) {
+function TodoList({ todos, setTodos, todo }: TodoListProps) {
   const { title, description, done, date, id } = todo;
 
   const deleteHandler = () => {
-    setTodos(todos.filter((item: any) => item.id !== id));
+    setTodos(todos.filter((item) => item.id !== id));
   };
 
   const completeHandler = () => {
     return setTodos(
-      todos.map((item: any) => {
+      todos.map((item) => {
         if (item.id === id) {
           return { ...item, done: !item.done };
         }

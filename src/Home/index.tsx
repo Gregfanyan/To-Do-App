@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import classNames from "classnames";
+
 import SIdeBarForm from "../components/SideBarForm";
 import Todo from "../components/Todo";
+import Select from "../components/Select";
 import "./home.scss";
 
 function Home() {
@@ -50,8 +52,8 @@ function Home() {
     }
   }, [todos, status]);
 
-  const statusHandler = (e: any) => {
-    setStatus(e.target.value);
+  const statusHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setStatus(e.currentTarget.value);
   };
 
   return (
@@ -64,13 +66,7 @@ function Home() {
         </button>
       </div>
 
-      {todos && (
-        <select onChange={statusHandler} name="todos">
-          <option value="all">All</option>
-          <option value="done">Done</option>
-          <option value="inProgress">In progress</option>
-        </select>
-      )}
+      {todos.length > 0 && <Select statusHandler={statusHandler} />}
       <div className={buttonClasses}>
         <SIdeBarForm
           hideSideBar={hideSideBar}
