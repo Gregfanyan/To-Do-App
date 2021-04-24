@@ -1,3 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  text-align: center;
+}
+
 .App {
   text-align: center;
 }
@@ -8,7 +20,7 @@
   --primary: #5c107a;
   --primary-dark: #411253;
   --blue: #d7d1f0;
-  --red: #e72b09b3;
+  --red: #dc3545;
   --red-light: #f53c6ab3;
   --dark: rgb(46, 39, 40);
   --overlay-mask: rgba(73, 78, 85, 0.9);

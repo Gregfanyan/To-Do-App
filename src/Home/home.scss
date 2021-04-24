@@ -1,11 +1,11 @@
 .header {
   background: #fff;
+  width: 90%;
+  margin: 0 auto;
   &__menu {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 10px 20px 0;
-    padding: 10px 15px;
     //box-shadow: 0 0 20px 2px var(--dark);
     border-radius: 15px;
   }
@@ -14,7 +14,6 @@
     font-family: "Metal Mania", Arial, sans-serif;
     font-style: normal;
     text-shadow: 0 0 0.8rem var(--overlay-mask);
-    font-size: 40px;
   }
   &__addTodo {
     position: absolute;
@@ -67,7 +66,7 @@
     margin: 0 auto;
   }
   select {
-    margin: 20px;
+    /* margin: 20px; */
     width: 150px;
     padding: 5px 35px 5px 5px;
     font-size: 16px;

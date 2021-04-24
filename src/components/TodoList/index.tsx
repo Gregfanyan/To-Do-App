@@ -35,17 +35,24 @@ function TodoList({ todos, setTodos, todo }: TodoListProps) {
             <button onClick={completeHandler} className={buttonClasses}>
               <i className="fas fa-check"></i>
             </button>
-            <div className={done === false ? null : "todo-wrapper__completed"}>
+            <div
+              className={
+                done === false
+                  ? "todo-wrapper__title"
+                  : "todo-wrapper__completed"
+              }
+            >
               {title}
             </div>
-            <div>{date}</div>
+            <div>Created at: {date}</div>
           </div>
           <div className="todo-wrapper__description-wrapper">
-            <div className={done === false ? null : "todo-wrapper__completed"}>
+            <div className={done === false ? "todo-wrapper__description" : "todo-wrapper__completed"}>
               {description}
             </div>
-            <button onClick={deleteHandler}>
-              <i className="fas fa-trash"></i>
+            <button onClick={deleteHandler} className="todo-wrapper__deleteBtn">
+              <i className="far fa-trash-alt fa-lg"></i>
+              Remove
             </button>
           </div>
         </div>

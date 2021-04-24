@@ -4,7 +4,7 @@ import TodoList from "../TodoList";
 import { TodoProps } from "../../types/ui";
 function Todo({ todos, setTodos }: TodoProps) {
   return (
-    <div>
+    <div style={{ width: "100%", margin: "0 auto" }}>
       {todos &&
         todos.map((todo) => (
           <TodoList
