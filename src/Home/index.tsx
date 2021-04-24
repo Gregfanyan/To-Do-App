@@ -27,6 +27,17 @@ function Home() {
   });
 
   useEffect(() => {
+    const data = localStorage.getItem("todos");
+    if (data) {
+      setTodos(JSON.parse(data));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  });
+
+  useEffect(() => {
     switch (status) {
       case "done":
         setFilteredTodo(todos.filter((todo) => todo.done === true));
