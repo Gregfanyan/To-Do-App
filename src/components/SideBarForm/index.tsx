@@ -1,6 +1,7 @@
 import React from "react";
 
 import { SideBarFormProps } from "../../types/ui";
+import "./sideBarForm.scss";
 
 function SideBarForm({
   hideSideBar,
@@ -46,10 +47,13 @@ function SideBarForm({
   };
 
   return (
-    <div>
+    <div className="todo-form-wrapper">
       <form>
-        <button id="cancelButton" onClick={hideSideBar}>
-          <i className="fas fa-times-circle"></i>
+        <button
+          className="todo-form-wrapper__cancelButton"
+          onClick={hideSideBar}
+        >
+          <i className="fas fa-times-circle fa-2x"></i>
         </button>
         <input
           type="text"
@@ -61,7 +65,7 @@ function SideBarForm({
           placeholder="Todo Desciption"
           onChange={descriptionOnChangeHandler}
         />
-        <button type="submit" onClick={addTodo}>
+        <button type="submit" onClick={addTodo} className='todo-form-wrapper__addTodo'>
           Add Todo
         </button>
       </form>

@@ -1,0 +1,41 @@
+.todo-form-wrapper {
+  position: relative;
+  margin: 15px;
+  padding: 30px 10px 5px;
+
+  &__addTodo,
+  textarea,
+  input {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 15px;
+    padding: 5px;
+    margin: 10px;
+    border: none;
+    box-shadow: 0px 5px 20px rgb(153, 176, 201);
+    outline: none;
+  }
+
+  &__cancelButton {
+    color: var(--red);
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    width: 50px;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+
+  &__cancelButton:hover {
+    color: rgb(220, 53, 69);
+  }
+
+  &__addTodo {
+    cursor: pointer;
+  }
+}
