@@ -66,7 +66,7 @@ function Home() {
         <button
           onClick={openToSideBar}
           type="button"
-          className="header__showSidebar"
+          className="header__showSidebarBtn"
         >
           <i className="fa fa-plus fa-2x"></i>
           Add New To Do

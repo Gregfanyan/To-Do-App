@@ -1,4 +1,5 @@
 import React from "react";
+import classNames from "classnames";
 
 import { TodoListProps } from "../../types/ui";
 import "./todoList.scss";
@@ -21,21 +22,34 @@ function TodoList({ todos, setTodos, todo }: TodoListProps) {
     );
   };
 
+  const buttonClasses = classNames({
+    "todo-wrapper__completedBtn": true,
+    "todo-wrapper__completedBtnMarked": done,
+  });
+
   return (
     <div>
       {todo && (
-        <div className={done === false ? null : "completed"}>
-          <div>{title}</div>
-          <div>{description}</div>
-          <div>{date}</div>
+        <div className="todo-wrapper">
+          <div className="todo-wrapper__todo-title-date">
+            <button onClick={completeHandler} className={buttonClasses}>
+              <i className="fas fa-check"></i>
+            </button>
+            <div className={done === false ? null : "todo-wrapper__completed"}>
+              {title}
+            </div>
+            <div>{date}</div>
+          </div>
+          <div className="todo-wrapper__description-wrapper">
+            <div className={done === false ? null : "todo-wrapper__completed"}>
+              {description}
+            </div>
+            <button onClick={deleteHandler}>
+              <i className="fas fa-trash"></i>
+            </button>
+          </div>
         </div>
       )}
-      <button onClick={deleteHandler}>
-        <i className="fas fa-trash"></i>
-      </button>
-      <button onClick={completeHandler}>
-        <i className="fas fa-check"></i>
-      </button>
     </div>
   );
 }
