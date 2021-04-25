@@ -12,7 +12,7 @@ function TodoList({ todos, setTodos, todo }: TodoListProps) {
   };
 
   const completeHandler = () => {
-    return setTodos(
+    setTodos(
       todos.map((item) => {
         if (item.id === id) {
           return { ...item, done: !item.done };
@@ -54,8 +54,8 @@ function TodoList({ todos, setTodos, todo }: TodoListProps) {
             </button>
           </div>
           <div className="todo-wrapper__description-wrapper">
-            <div className={todoCompletedDesc}>{description}</div>
             <div className={todoCompletedTitle}>{title}</div>
+            <div className={todoCompletedDesc}>{description}</div>
           </div>
         </div>
       )}

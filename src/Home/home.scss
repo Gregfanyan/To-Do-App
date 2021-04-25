@@ -1,14 +1,18 @@
 .header {
   background: #fff;
-  width: 90%;
+  min-width: 90%;
   margin: 0 auto;
   &__menu {
-    display: flex;
+    /*   display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    //box-shadow: 0 0 20px 2px var(--dark);
+    justify-content: space-between; */
+    box-shadow: 0 0 2px 2px var(--overlay-mask);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
     border-radius: 15px;
-    padding-bottom: 50px;
+    margin-bottom: 50px;
+    padding: 20px;
   }
   h1 {
     align-self: center;
@@ -76,5 +80,14 @@
     width: 100%;
     justify-content: center;
     flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header__menu {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+    grid-gap: 50px;
   }
 }
