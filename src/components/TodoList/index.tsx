@@ -22,7 +22,7 @@ function TodoList({ todos, setTodos, todo }: TodoListProps) {
     );
   };
 
-  const buttonClasses = classNames({
+  const completedButtonClasses = classNames({
     "todo-wrapper__completedBtn": true,
     "todo-wrapper__completedBtnMarked": done,
   });
@@ -42,18 +42,20 @@ function TodoList({ todos, setTodos, todo }: TodoListProps) {
       {todo && (
         <div className="todo-wrapper">
           <div className="todo-wrapper__todo-title-date">
-            <button onClick={completeHandler} className={buttonClasses}>
+            <button
+              onClick={completeHandler}
+              className={completedButtonClasses}
+            >
               <i className="fas fa-check"></i>
             </button>
-            <div className={todoCompletedTitle}>{title}</div>
-            <div>Created at: {date}</div>
+            <div> &nbsp;{date}</div>
+            <button onClick={deleteHandler} className="todo-wrapper__deleteBtn">
+              <i className="fa fa-remove fa-lg"></i>
+            </button>
           </div>
           <div className="todo-wrapper__description-wrapper">
             <div className={todoCompletedDesc}>{description}</div>
-            <button onClick={deleteHandler} className="todo-wrapper__deleteBtn">
-              <i className="far fa-trash-alt fa-lg"></i>
-              Remove
-            </button>
+            <div className={todoCompletedTitle}>{title}</div>
           </div>
         </div>
       )}

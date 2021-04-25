@@ -57,38 +57,40 @@ function Home() {
   };
 
   return (
-    <div className="header">
-      <div className="header__menu">
-        <h1>To Do List</h1>
-        <div className="header__select-wrapper">
-          {todos.length > 0 && <Select statusHandler={statusHandler} />}
+    <>
+      <div className="header">
+        <div className="header__menu">
+          <h1>To Do List</h1>
+          <div className="header__select-wrapper">
+            {todos.length > 0 && <Select statusHandler={statusHandler} />}
+          </div>
+          <button
+            onClick={openToSideBar}
+            type="button"
+            className="header__showSidebarBtn"
+          >
+            <i className="fa fa-plus fa-2x"></i>
+            Add New To Do
+          </button>
         </div>
-        <button
-          onClick={openToSideBar}
-          type="button"
-          className="header__showSidebarBtn"
-        >
-          <i className="fa fa-plus fa-2x"></i>
-          Add New To Do
-        </button>
-      </div>
 
-      <div className={buttonClasses}>
-        <SIdeBarForm
-          hideSideBar={hideSideBar}
-          setOpenSideBar={setOpenSideBar}
-          title={title}
-          setTitle={setTitle}
-          description={description}
-          setDescription={setDescription}
-          todos={todos}
-          setTodos={setTodos}
-        />
+        <div className={buttonClasses}>
+          <SIdeBarForm
+            hideSideBar={hideSideBar}
+            setOpenSideBar={setOpenSideBar}
+            title={title}
+            setTitle={setTitle}
+            description={description}
+            setDescription={setDescription}
+            todos={todos}
+            setTodos={setTodos}
+          />
+        </div>
+        <div className="header__todoContainer">
+          <Todo setTodos={setTodos} todos={filteredTodo} />
+        </div>
       </div>
-      <div>
-        <Todo setTodos={setTodos} todos={filteredTodo} />
-      </div>
-    </div>
+    </>
   );
 }
 

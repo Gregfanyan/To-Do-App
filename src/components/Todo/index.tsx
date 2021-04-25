@@ -2,9 +2,11 @@ import React from "react";
 
 import TodoList from "../TodoList";
 import { TodoProps } from "../../types/ui";
+import './todo.scss'
+
 function Todo({ todos, setTodos }: TodoProps) {
   return (
-    <div style={{ width: "100%", margin: "0 auto" }}>
+    <div className='todo-Wrapper'>
       {todos &&
         todos.map((todo) => (
           <TodoList

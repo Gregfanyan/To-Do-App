@@ -8,6 +8,7 @@
     justify-content: space-between;
     //box-shadow: 0 0 20px 2px var(--dark);
     border-radius: 15px;
+    padding-bottom: 50px;
   }
   h1 {
     align-self: center;
@@ -68,5 +69,12 @@
     border-radius: 10px;
     border: none;
     outline: none;
+    cursor: pointer;
+  }
+  &__todoContainer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 }

@@ -2,12 +2,13 @@
   display: flex;
   flex-direction: column;
   padding-bottom: 5px;
+  justify-content: center;
 
   &__todo-title-date {
     position: relative;
-    padding: 5px 10px;
+    width: 11rem;
+    padding: 15px 20px;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     background-color: var(--overlay-mask);
@@ -16,14 +17,11 @@
   }
 
   &__description-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     border: 1px solid black;
     border-radius: 0px 0px 15px 15px;
   }
   &__title {
-    margin-left: 100px;
+    margin-left: 1px;
   }
   &__description {
     align-items: center;
@@ -31,34 +29,33 @@
     padding-left: 10px;
   }
   &__completedBtn {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     background: var(--light);
     border: none;
+    cursor: pointer;
   }
   &__completedBtnMarked {
     background: var(--ligth-green);
   }
   &__deleteBtn {
-    margin: 5px;
-    width: 100px;
-    height: 34px;
-    padding: 5px;
-    border-radius: 10px;
+    width: 25px;
+    height: 25px;
+    background: var(--red);
+    border-radius: 50%;
     display: flex;
-    justify-content: center;
     align-items: center;
-    text-align: center;
-    background-color: var(--red);
-    color: var(--light);
-    cursor: pointer;
-    font-size: 15px;
-    font-weight: 1000;
+    justify-content: center;
     border: none;
+    cursor: pointer;
   }
-  &__deleteBtn :first-child {
-    padding-right: 5px;
+  &__deleteBtn i {
+    color: white;
+  }
+
+  &__deleteBtn:hover {
+    background: var(--overlay-mask);
   }
   &__completed {
     text-decoration: line-through;
