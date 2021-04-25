@@ -1,60 +1,68 @@
+@import "../../App.scss";
+
 .todo-wrapper {
   display: flex;
   flex-direction: column;
   padding-bottom: 5px;
   justify-content: center;
 
-  &__todo-title-date {
+  &__title-section {
     position: relative;
-    width: 11rem;
-    padding: 15px 20px;
+    width: 12rem;
+    padding: 15px 0;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
     background-color: var(--overlay-mask);
     color: white;
     border-radius: 15px 15px 0px 0px;
+    min-height: 4rem;
   }
 
-  &__description-wrapper {
+  &__description-section {
     border: 1px solid black;
     border-radius: 0px 0px 15px 15px;
-  }
-  &__title {
-    margin-left: 1px;
+    width: 12rem;
+    min-height: 4rem;
+    display: flex;
+    @include flexCenter;
+    overflow: auto;
   }
   &__description {
     align-items: center;
     align-self: center;
+    font-size: 18px;
+    font-style: italic;
   }
   &__completedBtn {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: var(--light);
-    border: none;
-    cursor: pointer;
+    background: var(--blue);
+    @include cardButtons;
+    top: -8px;
+    left: -4px;
   }
   &__completedBtnMarked {
     background: var(--ligth-green);
   }
   &__deleteBtn {
-    width: 25px;
-    height: 25px;
+    @include cardButtons;
     background: var(--red);
-    border-radius: 50%;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    cursor: pointer;
+    @include flexCenter;
   }
   &__deleteBtn i {
-    color: white;
+    color: var(--light);
   }
-
+  &__date {
+    position: absolute;
+    top: 0;
+    font-size: 15px;
+  }
   &__deleteBtn:hover {
     background: var(--overlay-mask);
+  }
+  &__title {
+    align-self: center;
+    font-weight: 1000;
+    font-size: medium;
   }
   &__completed {
     text-decoration: line-through;

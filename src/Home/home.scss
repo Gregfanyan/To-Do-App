@@ -1,11 +1,10 @@
+@import "../App.scss";
+
 .header {
   background: #fff;
   min-width: 90%;
   margin: 0 auto;
   &__menu {
-    /*   display: flex;
-    flex-direction: row;
-    justify-content: space-between; */
     box-shadow: 0 0 2px 2px var(--overlay-mask);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -26,7 +25,6 @@
     right: -400px;
     margin: 0;
     padding: 0;
-    width: 90%;
     max-width: 300px;
     height: 98vh;
     border: 1px solid #ccc;
@@ -34,8 +32,8 @@
     border-radius: 20px 0 0 20px;
     background: var(--light);
     color: var(--light);
-    transition: right 250ms ease-out;
     display: none;
+    transition: right 250ms ease-out;
   }
   &__enabled {
     right: 0;
@@ -52,8 +50,7 @@
     padding: 5px;
     border-radius: 10px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flexCenter;
     text-align: center;
     background-color: var(--overlay-mask);
     color: var(--light);
@@ -85,9 +82,6 @@
 
 @media screen and (max-width: 767px) {
   .header__menu {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    justify-items: center;
-    grid-gap: 50px;
+    @include mobileStyle;
   }
 }

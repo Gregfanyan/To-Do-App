@@ -3,7 +3,7 @@ export type todo = {
   title: string;
   description: string;
   id: number;
-  done: boolean;
+  isDone: boolean;
 };
 
 export type selectProps = {

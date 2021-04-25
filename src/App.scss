@@ -14,6 +14,29 @@ body {
   text-align: center;
 }
 
+@mixin flexCenter {
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin mobileStyle {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  justify-items: center;
+  grid-gap: 50px;
+}
+
+@mixin cardButtons {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  top: -8px;
+  right: -8px;
+}
+
 :root {
   --light: #fafafa;
   --dark: rgb(21, 17, 37);
@@ -25,7 +48,6 @@ body {
   --dark: rgb(46, 39, 40);
   --overlay-mask: rgba(73, 78, 85, 0.9);
   --shaded-dark: rgb(40, 36, 58);
-  --yellow: rgb(228, 160, 15);
   --green: #3f8839;
   --ligth-green: rgb(79, 165, 51);
 }

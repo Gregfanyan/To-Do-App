@@ -33,7 +33,7 @@ function SideBarForm({
         {
           title: title,
           description: description,
-          done: false,
+          isDone: false,
           id: Math.random() * 100000,
           date: new Date().toLocaleDateString(),
         },
