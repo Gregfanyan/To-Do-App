@@ -64,7 +64,7 @@ function SideBarForm({
         />
         <textarea
           required
-          placeholder="Todo Desciption"
+          placeholder="Todo Description"
           onChange={descriptionOnChangeHandler}
           value={description}
         />

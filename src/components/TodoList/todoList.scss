@@ -1,70 +1,25 @@
 @import "../../App.scss";
 
-.todo-wrapper {
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 5px;
-  justify-content: center;
+.todo-Wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  align-items: center;
+  justify-items: center;
+  grid-gap: 5px;
+}
 
-  &__title-section {
-    position: relative;
-    width: 12rem;
-    padding: 15px 0;
-    display: flex;
-    justify-content: center;
-    background-color: var(--overlay-mask);
-    color: white;
-    border-radius: 15px 15px 0px 0px;
-    min-height: 4rem;
+@media screen and (max-width: 1024px) {
+  .todo-Wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    grid-gap: 20px;
   }
+}
 
-  &__description-section {
-    border: 1px solid black;
-    border-radius: 0px 0px 15px 15px;
-    width: 12rem;
-    min-height: 4rem;
-    display: flex;
-    @include flexCenter;
-    overflow: auto;
-  }
-  &__description {
-    align-items: center;
-    align-self: center;
-    font-size: 18px;
-    font-style: italic;
-  }
-  &__completedBtn {
-    background: var(--blue);
-    @include cardButtons;
-    top: -8px;
-    left: -4px;
-  }
-  &__completedBtnMarked {
-    background: var(--ligth-green);
-  }
-  &__deleteBtn {
-    @include cardButtons;
-    background: var(--red);
-    display: flex;
-    @include flexCenter;
-  }
-  &__deleteBtn i {
-    color: var(--light);
-  }
-  &__date {
-    position: absolute;
-    top: 0;
-    font-size: 15px;
-  }
-  &__deleteBtn:hover {
-    background: var(--overlay-mask);
-  }
-  &__title {
-    align-self: center;
-    font-weight: 1000;
-    font-size: medium;
-  }
-  &__completed {
-    text-decoration: line-through;
+@media screen and (max-width: 767px) {
+  .todo-Wrapper {
+    @include mobileStyle;
   }
 }

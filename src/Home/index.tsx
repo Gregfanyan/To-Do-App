@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import classNames from "classnames";
 
 import SIdeBarForm from "../components/SideBarForm";
-import Todo from "../components/Todo";
+import TodoList from "../components/TodoList";
 import Select from "../components/Select";
 import "./home.scss";
 
@@ -42,10 +42,10 @@ function Home() {
   useEffect(() => {
     switch (status) {
       case "done":
-        setFilteredTodo(todos.filter((todo) => todo.done === true));
+        setFilteredTodo(todos.filter((todo) => todo.isDone === true));
         break;
       case "inProgress":
-        setFilteredTodo(todos.filter((todo) => todo.done === false));
+        setFilteredTodo(todos.filter((todo) => todo.isDone === false));
         break;
       default:
         setFilteredTodo(todos);
@@ -87,7 +87,7 @@ function Home() {
           />
         </div>
         <div className="header__todoContainer">
-          <Todo setTodos={setTodos} todos={filteredTodo} />
+          <TodoList setTodos={setTodos} todos={filteredTodo} />
         </div>
       </div>
     </>
