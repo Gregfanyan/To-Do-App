@@ -62,7 +62,11 @@ function Home() {
         <div className="header__menu">
           <h1>To Do List</h1>
           <div className="header__select-wrapper">
-            {todos.length > 0 && <Select statusHandler={statusHandler} />}
+            {todos.length > 0 ? (
+              <Select statusHandler={statusHandler} />
+            ) : (
+              <h1>No Todos</h1>
+            )}
           </div>
           <button
             onClick={openToSideBar}

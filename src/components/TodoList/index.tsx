@@ -6,7 +6,7 @@ import './todoList.scss'
 
 function TodoList({ todos, setTodos }: TodoProps) {
   return (
-    <div className='todo-Wrapper'>
+ <div className={todos && todos.length > 5 ? "todo-wrapper-grid" : "todo-wrapper-flex"}>
       {todos &&
         todos.map((todo) => (
           <Todo
