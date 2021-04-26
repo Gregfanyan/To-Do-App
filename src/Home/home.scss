@@ -2,22 +2,34 @@
 
 .header {
   background: #fff;
-  min-width: 90%;
+  min-width: 100%;
   margin: 0 auto;
   &__menu {
-    box-shadow: 0 0 2px 2px var(--overlay-mask);
+    box-shadow: 0 0 6px 2px var(--overlay-mask);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
     border-radius: 15px;
     margin-bottom: 50px;
     padding: 20px;
+    background: #3e5151; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #decba4,
+      #3e5151
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #decba4,
+      #3e5151
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
   h1 {
     align-self: center;
     font-family: "Metal Mania", Arial, sans-serif;
     font-style: normal;
     text-shadow: 0 0 0.8rem var(--overlay-mask);
+    color: var(--overlay-mask)
   }
   &__addTodo {
     position: absolute;
