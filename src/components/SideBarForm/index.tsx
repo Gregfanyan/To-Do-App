@@ -1,4 +1,5 @@
 import React from "react";
+import { v4 as uuidv4 } from "uuid";
 
 import { SideBarFormProps } from "../../types/ui";
 import "./sideBarForm.scss";
@@ -34,7 +35,7 @@ function SideBarForm({
           title: title,
           description: description,
           isDone: false,
-          id: Math.random() * 100000,
+          id: uuidv4(),
           date: new Date().toLocaleDateString(),
         },
       ]);

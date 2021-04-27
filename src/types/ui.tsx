@@ -2,7 +2,7 @@ export type todo = {
   date: string;
   title: string;
   description: string;
-  id: number;
+  id: string;
   isDone: boolean;
 };
 
