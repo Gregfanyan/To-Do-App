@@ -1,0 +1,78 @@
+@import "../../App.scss";
+
+.todo-wrapper {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding-bottom: 10px;
+  justify-content: center;
+  max-height: 8rem;
+  width: 12rem;
+
+  &__title-section {
+    position: relative;
+    min-width: 12rem;
+    min-height: 4rem;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    background-color: var(--overlay-mask);
+    color: white;
+    border-radius: 15px 15px 0px 0px;
+  }
+
+  &__title {
+    align-self: center;
+    font-weight: 1000;
+    font-size: medium;
+  }
+
+  &__description-section {
+    border: 1px solid black;
+    border-radius: 0px 0px 15px 15px;
+    min-width: 12rem;
+    min-height: 4rem;
+    display: flex;
+    @include flexCenter;
+    overflow: auto;
+  }
+  &__description {
+    display: inline-block;
+    align-items: center;
+    align-self: center;
+    font-size: 18px;
+    font-style: italic;
+    word-break: break-word;
+    text-align: justify;
+    padding: 10px;
+  }
+  &__completedBtn {
+    background: var(--blue);
+    @include cardButtons;
+    top: -8px;
+    left: -4px;
+  }
+  &__completedBtnMarked {
+    background: var(--ligth-green);
+  }
+  &__deleteBtn {
+    @include cardButtons;
+    background: var(--red);
+    display: flex;
+    @include flexCenter;
+  }
+  &__deleteBtn i {
+    color: var(--light);
+  }
+  &__date {
+    position: absolute;
+    top: 0;
+    font-size: 15px;
+  }
+  &__deleteBtn:hover {
+    background: var(--overlay-mask);
+  }
+  &__completed {
+    text-decoration: line-through;
+  }
+}

@@ -1,0 +1,99 @@
+@import "../App.scss";
+
+.header {
+  background: #fff;
+  min-width: 100%;
+  margin: 0 auto;
+  &__menu {
+    box-shadow: 0 0 6px 2px var(--overlay-mask);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    border-radius: 15px;
+    margin-bottom: 50px;
+    padding: 20px;
+    background: #3e5151; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #decba4,
+      #3e5151
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #decba4,
+      #3e5151
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+  h1 {
+    align-self: center;
+    font-family: "Metal Mania", Arial, sans-serif;
+    font-style: normal;
+    text-shadow: 0 0 0.8rem var(--overlay-mask);
+    color: var(--overlay-mask)
+  }
+  &__addTodo {
+    position: absolute;
+    top: 0;
+    right: -400px;
+    margin: 0;
+    padding: 0;
+    max-width: 300px;
+    height: 98vh;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 20px 2px var(--dark);
+    border-radius: 20px 0 0 20px;
+    background: var(--light);
+    color: var(--light);
+    display: none;
+    transition: right 250ms ease-out;
+  }
+  &__enabled {
+    right: 0;
+    display: block;
+    z-index: 1;
+  }
+  &__select-wrapper {
+    align-self: center;
+  }
+  &__showSidebarBtn {
+    margin: 10px 0;
+    width: 140px;
+    height: 45px;
+    padding: 5px;
+    border-radius: 10px;
+    display: flex;
+    @include flexCenter;
+    text-align: center;
+    background-color: var(--overlay-mask);
+    color: var(--light);
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 1000;
+  }
+  &__showSidebarBtn:hover {
+    background-color: var(--dark);
+    color: var(--light);
+  }
+  select {
+    width: 150px;
+    padding: 5px 35px 5px 5px;
+    font-size: 16px;
+    height: 44px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  &__todoContainer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header__menu {
+    @include mobileStyle;
+  }
+}
