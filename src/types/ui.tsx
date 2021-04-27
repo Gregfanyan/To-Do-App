@@ -12,7 +12,7 @@ export type selectProps = {
 
 export type SideBarFormProps = {
   hideSideBar: React.MouseEventHandler<HTMLButtonElement>;
-  setOpenSideBar: Boolean | any;
+  setOpenSideBar: Function;
   title: string;
   setTitle: Function;
   description: string;

@@ -5,14 +5,15 @@ import SIdeBarForm from "../components/SideBarForm";
 import TodoList from "../components/TodoList";
 import Select from "../components/Select";
 import "./home.scss";
+import { todo } from "../types/ui";
 
 function Home() {
-  const [openSideBar, setOpenSideBar] = useState<boolean | undefined>(false);
+  const [openSideBar, setOpenSideBar] = useState(false);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState<todo[]>([]);
   const [status, setStatus] = useState("all");
-  const [filteredTodo, setFilteredTodo] = useState([]);
+  const [filteredTodo, setFilteredTodo] = useState<todo[]>([]);
 
   const openToSideBar = () => {
     setOpenSideBar(true);
@@ -42,10 +43,10 @@ function Home() {
   useEffect(() => {
     switch (status) {
       case "done":
-        setFilteredTodo(todos.filter((todo) => todo.isDone === true));
+        setFilteredTodo(todos.filter((todo) => todo.isDone));
         break;
       case "inProgress":
-        setFilteredTodo(todos.filter((todo) => todo.isDone === false));
+        setFilteredTodo(todos.filter((todo) => !todo.isDone));
         break;
       default:
         setFilteredTodo(todos);
