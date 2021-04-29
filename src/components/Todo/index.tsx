@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import classNames from "classnames";
 
 import { TodoListProps } from "../../types/ui";
@@ -6,6 +6,8 @@ import "./todo.scss";
 
 function Todo({ todos, setTodos, todo }: TodoListProps) {
   const { title, description, isDone, date, id } = todo;
+  const [titleInput, setTitleInput] = useState("");
+  const [isClicked, setIsClicked] = useState(false);
 
   const deleteHandler = () => {
     setTodos(todos.filter((item) => item.id !== id));
@@ -36,6 +38,31 @@ function Todo({ todos, setTodos, todo }: TodoListProps) {
     "todo-wrapper__description": true,
     "todo-wrapper__completed": isDone,
   });
+  const editBtnClasses = classNames({
+    "todo-wrapper__pencilBtn": true,
+    "todo-wrapper__completed": isDone,
+  });
+
+  const openTitleInputClick = () => {
+    setIsClicked(!isClicked);
+  };
+
+  const changeTodoHandleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (titleInput) {
+      setTodos(
+        todos.map((item) => {
+          if (item.id === id) {
+            return { ...item, title: titleInput };
+          }
+          return item;
+        })
+      );
+    }
+
+    setIsClicked(false);
+    setTitleInput("");
+  };
 
   return (
     <>
@@ -49,7 +76,32 @@ function Todo({ todos, setTodos, todo }: TodoListProps) {
               <i className="fas fa-check"></i>
             </button>
             <div className="todo-wrapper__date"> &nbsp;{date}</div>
-            <div className={todoTitleClasses}>{title}</div>
+            {!isClicked ? (
+              <>
+                <div className={todoTitleClasses}>{title}</div>
+              </>
+            ) : (
+              <input
+                onChange={(e) => setTitleInput(e.target.value)}
+                defaultValue={title}
+              />
+            )}
+            {!isClicked ? (
+              <button
+                onClick={openTitleInputClick}
+                className={editBtnClasses}
+                disabled={isDone}
+              >
+                <i className="fas fa-pencil-alt fa-lg"></i>
+              </button>
+            ) : (
+              <button
+                onClick={changeTodoHandleClick}
+                className={editBtnClasses}
+              >
+                <i className="fas fa-pencil-alt fa-lg"></i>
+              </button>
+            )}
             <button onClick={deleteHandler} className="todo-wrapper__deleteBtn">
               <i className="fa fa-remove fa-lg"></i>
             </button>

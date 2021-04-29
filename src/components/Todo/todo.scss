@@ -25,6 +25,8 @@
     align-self: center;
     font-weight: 1000;
     font-size: medium;
+    padding-right: 10px;
+    text-transform: capitalize;
   }
 
   &__description-section {
@@ -74,5 +76,17 @@
   }
   &__completed {
     text-decoration: line-through;
+  }
+  &__pencilBtn {
+    cursor: pointer;
+    padding: none;
+    border: none;
+    outline: inherit;
+    background: none;
+    color: var(--light);
+    font-size-adjust: initial;
+  }
+  &__pencilBtn:hover:enabled {
+    color: var(--ligth-green);
   }
 }
