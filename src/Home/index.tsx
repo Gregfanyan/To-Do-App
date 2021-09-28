@@ -24,6 +24,7 @@ function Home() {
     setOpenSideBar(false);
   };
 
+
   const buttonClasses = classNames({
     header__addTodo: true,
     header__enabled: openSideBar,
@@ -56,6 +57,8 @@ function Home() {
   const statusHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setStatus(e.currentTarget.value);
   };
+
+  //testing
 
   return (
     <>
